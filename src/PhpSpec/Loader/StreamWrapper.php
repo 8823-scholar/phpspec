@@ -63,7 +63,9 @@ class StreamWrapper
         $content = file_get_contents($this->realPath);
 
         foreach (static::$specTransformers as $specTransformer) {
+            var_dump($specTransformer);
             $content = $specTransformer->transform($content);
+            var_dump($content);
         }
 
         $this->fileResource = fopen('php://memory', 'w+');
