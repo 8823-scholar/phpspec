@@ -90,7 +90,6 @@ class Application extends BaseApplication
 
         StreamWrapper::reset();
         foreach ($this->container->getByPrefix('loader.resource_loader.spec_transformer') as $transformer) {
-            var_dump($transformer);
             StreamWrapper::addTransformer($transformer);
         }
         StreamWrapper::register();
